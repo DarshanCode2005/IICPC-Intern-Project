@@ -100,10 +100,11 @@ BETTERSTACKSOURCETOKEN=<logging_token>
 
 ## Security Features
 
-- Network isolation for execution containers
-- Resource limits to prevent abuse
-- Code sanitization and validation
-- Automatic container cleanup and replacement
+- Network-isolated Docker containers per job; workers run inside a restricted image.
+- Resource limits per container (memory/CPU) with health monitoring and eviction on outsurge.
+- Code sanitization and pattern-based blocking by language before execution.
+- Temporary filesystem sandbox for user code and inputs; no host writes in normal flow.
+- Automatic container cleanup, replacement on failure, and idle-state tracking.
 
 ## Deployment
 
