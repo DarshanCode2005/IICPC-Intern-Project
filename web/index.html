@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Execution Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Code Execution Engine</h1>
+        <p>Run Go, Python, JavaScript, or C++ snippets in isolated containers.</p>
+      </header>
+
+      <form id="exec-form">
+        <div class="controls">
+          <label>
+            Language
+            <select id="language">
+              <option value="go">Go</option>
+              <option value="python">Python</option>
+              <option value="js">JavaScript</option>
+              <option value="cpp">C++</option>
+              <option value="c">C</option>
+              <option value="java">Java</option>
+            </select>
+          </label>
+          <button type="submit">Run Code</button>
+        </div>
+        <div id="editor" class="editor" aria-label="Code editor"></div>
+      </form>
+
+      <section class="custom-input">
+        <div class="custom-input-header">
+          <h2>Custom Input</h2>
+          <button id="run-with-input" class="secondary">Run With Input</button>
+        </div>
+        <textarea id="custom-input" placeholder="Enter stdin payload..."></textarea>
+      </section>
+
+      <section class="problems">
+        <div class="problem-header">
+          <h2>Practice Problems</h2>
+          <select id="problem-select"></select>
+        </div>
+        <div id="problem-details">
+          <div id="problem-description">Select a problem to see details.</div>
+          <p id="problem-constraints"></p>
+        </div>
+        <button id="submit-problem" class="secondary">Run Against Tests</button>
+        <div id="verdict" class="verdict"></div>
+        <ul id="test-results" class="test-results"></ul>
+      </section>
+
+      <section class="output">
+        <h2>Output</h2>
+        <pre id="output-area">Waiting for execution...</pre>
+      </section>
+    </div>
+
+    <script>
+      window.MONACO_BASE_URL =
+        window.MONACO_BASE_URL ||
+        "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min";
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+      onload="window.__markedReady=true;document.dispatchEvent(new Event('marked-ready'));"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
