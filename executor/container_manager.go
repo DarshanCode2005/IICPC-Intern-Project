@@ -127,7 +127,7 @@ func (cm *ContainerManager) InitializePool() error {
 
 	// Register existing worker containers
 	for _, c := range containers {
-		if c.Image == "DarshanCode2005/worker" {
+		if c.Image == "24321010/worker" {
 			state := StateIdle
 			if c.State != "running" {
 				state = StateError
@@ -180,7 +180,7 @@ func (cm *ContainerManager) StartContainer() error {
 	cm.mu.Unlock()
 
 	config := &container.Config{
-		Image: "DarshanCode2005/worker",
+		Image: "24321010/worker",
 		Tty:   true,
 	}
 
@@ -292,7 +292,7 @@ func (cm *ContainerManager) checkHealth() {
 
 	runningWorkers := make(map[string]bool)
 	for _, c := range containers {
-		if c.Image == "DarshanCode2005/worker" {
+		if c.Image == "24321010/worker" {
 			if _, exists := cm.containers[c.ID]; exists {
 				if cm.containers[c.ID].State != StateError {
 					runningWorkers[c.ID] = true

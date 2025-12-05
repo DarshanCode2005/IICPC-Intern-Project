@@ -43,7 +43,7 @@ The engine follows a microservices architecture with the following components:
 - Each worker requests an available container from the pool
 
 ### 3. Container Management
-- Pre-warmed Docker containers (`DarshanCode2005/worker`) are maintained in a pool
+- Pre-warmed Docker containers (`24321010/worker`) are maintained in a pool
 - Containers are assigned to jobs and monitored for resource usage
 - Automatic container replacement when limits are exceeded or containers fail
 - Resource limits: 400MB memory, 500 CPU nano-cores per container
@@ -87,7 +87,7 @@ BETTERSTACKSOURCETOKEN=<logging_token>
 ## Container Requirements
 
 - Docker daemon must be running
-- Worker image `DarshanCode2005/worker` must be available locally
+- Worker image `24321010/worker` must be available locally
 - Network isolation enabled for security
 
 ## Resource Management (default)
