@@ -14,7 +14,7 @@ body {
 }
 
 .app {
-  width: min(960px, 100%);
+  width: min(1200px, 100%);
   background: #121226;
   border-radius: 16px;
   padding: 2rem;
@@ -97,12 +97,37 @@ button:hover {
   overflow: hidden;
 }
 
+.main-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.left-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.right-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .output {
-  margin-top: 2rem;
+  margin-top: 0;
   background: #0a0a18;
   border-radius: 12px;
   border: 1px solid #1c1c38;
   padding: 1rem;
+}
+
+.sticky {
+  position: sticky;
+  top: 1rem;
 }
 
 .custom-input {
@@ -118,6 +143,9 @@ button:hover {
 
 .custom-input textarea {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
   min-height: 140px;
   border-radius: 12px;
   border: 1px solid #242450;
@@ -268,6 +296,10 @@ pre {
 @media (max-width: 640px) {
   .app {
     padding: 1.25rem;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
   }
 
   .controls {
