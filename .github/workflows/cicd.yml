@@ -47,7 +47,7 @@ jobs:
           sudo systemctl restart engine.service
 
           yes | sudo docker system prune
-EOF
+        EOF
 
     - name: Cleanup local key
       run: rm key.pem
